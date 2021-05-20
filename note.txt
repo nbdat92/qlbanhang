@@ -1,0 +1,6 @@
+CRUD
+php artisan make:controller TinTuccontroller // tạo controller
+thêm  --resource để tạo sẵn phương thức
+___________________________________________________________
+
+
