@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Photocontroller;
 use App\Http\Controllers\TinTuccontroller;
 use App\Http\Controllers\SanPhamcontroller;
+use App\Http\Controllers\Teachmang;
+use App\Http\Controllers\Techmangcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +22,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 route::resource('photos', Photocontroller::class); // phương thức này chỉ phù hợp cho CRUD
 // tin tức
+route::prefix('techmang') -> group(function() {
+    route::get('/', [Techmangcontroller::class,'index']);  
+   
+});
+
 route::prefix('tin-tuc') -> group(function() {
     route::get('/', [TinTuccontroller::class,'index']);  
     route::get('/{id}', [TinTuccontroller::class,'show']) -> where('id', '[0-9]+');

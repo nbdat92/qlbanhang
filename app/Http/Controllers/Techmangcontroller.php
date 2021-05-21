@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\View;
 
-class TinTuccontroller extends BaseController
+class Techmangcontroller extends Controller
 {
-   
     /**
      * Display a listing of the resource.
      *
@@ -16,12 +14,9 @@ class TinTuccontroller extends BaseController
      */
     public function index()
     {
-        $mss = 'chào';
-        $ds = ['a','b','c'];
-        if(view::exists('tintuc.index'))
-            return view('tintuc.index',['mss'=>$mss, 'ds'=>$ds]);
-        else return view('welcome');
-
+      if(view::exists('techmang.index')){
+          return view('techmang.index');
+      } else return view('welcome');
     }
 
     /**
@@ -31,7 +26,7 @@ class TinTuccontroller extends BaseController
      */
     public function create()
     {
-        return 'rang thêm tin tức mới';
+        //
     }
 
     /**
@@ -42,7 +37,7 @@ class TinTuccontroller extends BaseController
      */
     public function store(Request $request)
     {
-        return 'Lưu tin tức mới';
+        //
     }
 
     /**
@@ -53,7 +48,7 @@ class TinTuccontroller extends BaseController
      */
     public function show($id)
     {
-        return 'Trang chi tiết tin tức '.$id;
+        //
     }
 
     /**
@@ -64,7 +59,7 @@ class TinTuccontroller extends BaseController
      */
     public function edit($id)
     {
-        return 'Trang hiển thị tin tức cần cập nhật'.$id;
+        //
     }
 
     /**
@@ -76,7 +71,7 @@ class TinTuccontroller extends BaseController
      */
     public function update(Request $request, $id)
     {
-        return 'Thực hiện cập nhật tin tức '.$id;
+        //
     }
 
     /**
@@ -87,9 +82,6 @@ class TinTuccontroller extends BaseController
      */
     public function destroy($id)
     {
-        return 'xóa tin tức '.$id;
-    }
-    function test(){
-        return 'test';
+        //
     }
 }
